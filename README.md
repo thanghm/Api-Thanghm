@@ -1,8 +1,8 @@
 Info API
-*Ruby 2.2.0
-*Rails 4.2.0
-*Database use Mysql
-*Grape-swagger
+  *Ruby 2.2.0
+  *Rails 4.2.0
+  *Database use Mysql
+  *Grape-swagger
 Install
 * Install ruby 2.2.0
 * Bundle install
@@ -27,6 +27,7 @@ authenticate with account email: test@gmail.com and password: 12345678
 **Can search matches by player name or season name
 
 ========****=========
+
 Api refer and modify:
 * http://worldcup.sfg.io/  #worldcup api load data from fifa
 * http://thamdinhgia.bavc.vn/api_docs #My company project product
@@ -34,6 +35,7 @@ Api refer and modify:
 * http://railscasts.com/episodes/352-securing-an-api?view=asciicast #Securing an API
 
 ========****=========
+
 Particularly proud:
 * All matchs search by name of season or name of player
 * And Calculate points of player gave up
