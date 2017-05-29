@@ -19,17 +19,27 @@ Build
 * rails s
 * URL: /api_docs 
 * Access with api_key in Table Apikey
+
 Function
+
 authenticate with account email: test@gmail.com and password: 12345678
+
 *User
+
 **Login
 **Logout
 **Reset Password
+
 *Season
+
 **Upload and import data by CSV file
+
 *Player
+
 **Can search number of point, wins, draws, losses maths by Player name
+
 *Match
+
 **Can search matches by player name or season name
 
 ========****=========
