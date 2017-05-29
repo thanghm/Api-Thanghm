@@ -1,14 +1,20 @@
 Info API
+
   *Ruby 2.2.0
+  
   *Rails 4.2.0
+  
   *Database use Mysql
+  
   *Grape-swagger
+  
 Install
 * Install ruby 2.2.0
 * Bundle install
 * Change database.yml set user password of mysql
 * rake db:setup
 * rake db:seed
+
 Build
 * rails s
 * URL: /api_docs 
