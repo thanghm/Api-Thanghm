@@ -1,20 +1,19 @@
 class CreateMatches < ActiveRecord::Migration
   def change
     create_table :matches do |t|
-      t.string :fifa_id
-      t.integer :match_number
-      t.string :location
+      t.integer :match_code
+      t.string :venue
       t.datetime :datetime
-      t.integer :home_team_id
-      t.integer :away_team_id
-      t.string :home_team_tbd
-      t.string :away_team_tbd
-      t.boolean :teams_scheduled
-      t.integer :home_team_score
-      t.integer :away_team_score
-      t.string :location
-      t.string :status
-      t.timestamps
+      t.date :datetime
+      t.integer :home_player_id
+      t.integer :away_player_id
+      t.string :home_player_tbd
+      t.string :away_player_tbd
+      t.boolean :players_scheduled
+      t.integer :home_player_score
+      t.integer :away_player_score
+      t.integer :status
+      t.timestamps null: false
     end
   end
 end

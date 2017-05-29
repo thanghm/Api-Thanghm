@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+ApiKey.create!
+user = User.find_or_create_by(email: "test@gmail.com")
+user.password = "12345678"
+user.save

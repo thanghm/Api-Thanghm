@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-WorldCupJson::Application.load_tasks
+FootballApi::Application.load_tasks

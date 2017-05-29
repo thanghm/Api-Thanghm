@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-WorldCupJson::Application.config.secret_key_base = '976ddc7cfde7ea24d402c843ed69ffc3d730dddfa1651b1d60a0795cf7c3b5c9f963d49f5fa6df83a2e95a99fb4f04e8be2dc40e693f192154ddbef06203b856'
+FootballApi::Application.config.secret_key_base = '976ddc7cfde7ea24d402c843ed69ffc3d730dddfa1651b1d60a0795cf7c3b5c9f963d49f5fa6df83a2e95a99fb4f04e8be2dc40e693f192154ddbef06203b856'

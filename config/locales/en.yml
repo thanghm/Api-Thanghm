@@ -19,5 +19,25 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+en: 
+  error: 
+    invalid_api_key: "API key is false"
+    unauthorized: "Unauthorized"
+  errors:
+    wrong_login_detail: "Wrong login detail"
+    user_has_been_deleted: "User has been deleted"
+  error_code: 
+    create: 1000
+    create_other: "Season is exist."
+    invalid_api_key: 402
+    unauthorized: 401
+    update: 1001
+    wrong_login_detail: 602
+    user_has_been_deleted: 612
+  success:
+    get_list_players: "Get list Players"
+    create_season: "Create season successful."
+    forgot_password: "Forgot password"
+    logout: "Logout successful."
+    login: "Login successful."
+    get_list_matches: "Get list in matches"
