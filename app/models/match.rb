@@ -6,7 +6,7 @@ class Match < ActiveRecord::Base
   belongs_to :away_player, :class_name => Player, :foreign_key => "away_player_id"
 
   def self.matchs_search options = {}
-  	players = Player.includes(:season, :home_matches, :away_matches).where("players.player_name like ? OR seasons.name like ?", "%#{ options[:search_text] }%", "%#{ options[:search_text] }%")
+  	players = Player.includes(:season).where("players.player_name like ? OR seasons.name like ?", "%#{ options[:search_text] }%", "%#{ options[:search_text] }%")
     player_id = players.pluck(:id)
     result = self.where("home_player_id IN (?) OR away_player_id IN (?)", player_id, player_id)
     result.page(options[:page])
