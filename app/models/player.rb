@@ -27,7 +27,7 @@ class Player < ActiveRecord::Base
   belongs_to :season
 
   def self.import_csv(name, player_1, player_2, group, match_code, time, date, venue, score)
-    if group.blank?
+    if group.present?
       player_id_gave_up = 0
       season_id = Season.find_by(name: name).id
       group_name = group.gsub(/[^A-Z]/i,"")
