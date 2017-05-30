@@ -53,7 +53,7 @@ Api refer and modify:
 ========****=========
 
 Particularly proud:
-* All matchs search by name of season or name of player
+* Import and insert data with csv
 * And Calculate points of player gave up
 Because: It make time consuming algorithm and test
 
