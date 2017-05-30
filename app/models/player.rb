@@ -36,12 +36,12 @@ class Player < ActiveRecord::Base
         group = Group.create(letter: group_name)
       end
       # Find Player A(Home)
-      player_a = self.where(player_name: player_1, season_id: season_id).first
+      player_a = self.where(player_name: player_1, season_id: season_id).last
       if player_a.blank?
         player_a = self.create(player_name: player_1, season_id: season_id, group_id: group.id)
       end
       # Find Player B(Away)
-      player_b = self.where(player_name: player_2, season_id: season_id).first
+      player_b = self.where(player_name: player_2, season_id: season_id).last
       if player_b.blank?
         player_b = self.create(player_name: player_2, season_id: season_id, group_id: group.id)
       end
