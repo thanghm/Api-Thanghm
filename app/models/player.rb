@@ -36,12 +36,12 @@ class Player < ActiveRecord::Base
         group = Group.create(letter: group_name)
       end
       # Find Player A(Home)
-      player_a = self.where(player_name: player_1, season_id: season_id).first
+      player_a = self.find_by(player_name: player_1, season_id: season_id)
       if player_a.blank?
         player_a = self.create(player_name: player_1, season_id: season_id, group_id: group.id)
       end
       # Find Player B(Away)
-      player_b = self.where(player_name: player_2, season_id: season_id).first
+      player_b = self.find_by(player_name: player_2, season_id: season_id)
       if player_b.blank?
         player_b = self.create(player_name: player_2, season_id: season_id, group_id: group.id)
       end
@@ -57,7 +57,7 @@ class Player < ActiveRecord::Base
       score_1 = score.split("-")[0].to_i
       score_2 = score.split("-")[1].to_i
       # Find matches
-      match = Match.where(match_code: match_code, home_player_id: player_a.id, away_player_id: player_b.id)
+      match = Match.find_by(match_code: match_code, home_player_id: player_a.id, away_player_id: player_b.id)
       if match.blank?
         match = Match.create(match_code: match_code, datetime: time, date: date, venue: venue, home_player_score: score_1, away_player_score: score_2, home_player_id: player_a.id, away_player_id: player_b.id, player_id_gave_up: player_id_gave_up, status: Match.statuses[:completed])
       end

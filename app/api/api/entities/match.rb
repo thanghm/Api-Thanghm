@@ -2,6 +2,7 @@ module API
   module Entities
     class Match < Grape::Entity
       expose :id, documentation: { type: Integer, required: true, desc: 'ID of Match'}
+      expose :season_name, documentation: { type: String, required: true, desc: 'Name of Season'}
       expose :match_code, documentation: { type: String, required: true, desc: 'Name of Match'}
       expose :player_name, as: :player, documentation: { type: String, required: true, desc: 'Player in Match'}
       expose :player_score, as: :score, documentation: { type: String, required: true, desc: 'Score in Match'}

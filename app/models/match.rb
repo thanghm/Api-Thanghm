@@ -12,6 +12,12 @@ class Match < ActiveRecord::Base
     result.page(options[:page])
   end
 
+  def season_name
+    if self.home_player && self.away_player
+      self.home_player.season.name
+    end
+  end
+
   def player_name
   	if self.home_player && self.away_player
   		string = ""
