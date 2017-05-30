@@ -39,7 +39,7 @@ module API
             is_new = true
             Season.create_from_csv name
             CSV.foreach(value).with_index do |row,index|
-              if row[1].present? && row[2].present? && row[3].present? && row[4].present? && row[5].present? && row[6].present? && row[7].present?  && row[8].present?
+              if index != 0 && row[1].present? && row[2].present? && row[3].present? && row[4].present? && row[5].present? && row[6].present? && row[7].present?  && row[8].present?
                 player_1[index] = row[3]
                 player_2[index] = row[4]
                 group[index] = row[1]
