@@ -13,7 +13,6 @@ Install
 * Bundle install
 * Change database.yml set user password of mysql
 * rake db:setup
-* rake db:seed
 
 Build
 * rails s
