@@ -16,31 +16,37 @@ Install
 
 Build
 * rails s
-* URL: /api_docs 
+* URL: http:/localhost:3000/api_docs # If test with browser Grape-swagger tool
 * Access with api_key in Table Apikey
 
 Function
 
-authenticate with account email: test@gmail.com and password: 12345678
+authenticate with account:
+* email: test@gmail.com
+* password: 12345678
 
-*User
+Parameter
+* Header: Apikey
+* authenticate require: UserToken
+* Field at search: search_text
 
-**Login
-**Logout
-**Reset Password
+User
+* Login  # POST http:/localhost:3000/api/v1/users/login
+* Logout  # POST http:/localhost:3000/api/v1/users/logout
+* Reset Password # GET http:/localhost:3000/api/v1/users/forgot-password
+* Parameter: email, password
 
-*Season
+Season
+* Upload and import data by CSV file # POST http:/localhost:3000/api/v1/seasons/csv
+* Parameter: csv[][file]
 
-**Upload and import data by CSV file
+Player
+* Can search number of point, wins, draws, losses maths by Player name # GET http:/localhost:3000/api/v1/players/search
+* Parameter: search_text
 
-*Player
-
-**Can search number of point, wins, draws, losses maths by Player name
-
-*Match
-
-**Can search matches by player name or season name
-
+Match
+* Can search matches by player name or season name # GET http:/localhost:3000/api/v1/matches/search_matches
+* Parameter: search_text
 ========****=========
 
 Api refer and modify:
