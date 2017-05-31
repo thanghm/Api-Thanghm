@@ -47,6 +47,7 @@ Player
 Match
 * Can search matches by player name or season name # GET http:/localhost:3000/api/v1/matches/search_matches
 * Parameter: search_text
+
 ========****=========
 
 Api refer and modify:
