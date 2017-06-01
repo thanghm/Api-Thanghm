@@ -11,7 +11,8 @@ module API
           }
         }
       params do
-        optional :search_text, type: String, desc: "Name of Matches for filter"
+        optional :season_name, type: String, desc: "Name of Seasons for filter"
+        optional :player_name, type: String, desc: "Name of Player for filter"
         optional :page, type: Integer, desc: 'The page number (Pagination)'
       end
       get "seach_matches" do

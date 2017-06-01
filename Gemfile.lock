@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/thoughtbot/factory_girl_rails.git
+  revision: dca37318f34b6ac102df70a162c4c5cbd4fc840a
+  specs:
+    factory_girl_rails (4.8.0)
+      factory_girl (~> 4.8.0)
+      railties (>= 3.0.0)
+
+GIT
   remote: git://github.com/tim-vandecasteele/grape-swagger.git
   revision: 12dae157e9d1b633490c0aa44c809a61c4e9ac09
   specs:
@@ -44,6 +52,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.5.1)
+      public_suffix (~> 2.0, >= 2.0.2)
     arel (6.0.4)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -57,6 +67,15 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.3)
+    capybara (2.14.0)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
+    childprocess (0.7.0)
+      ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.1)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -67,6 +86,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    database_cleaner (1.6.1)
     debug_inspector (0.0.3)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
@@ -77,11 +97,17 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    diff-lcs (1.3)
     doorkeeper (4.2.6)
       railties (>= 4.2)
     equalizer (0.0.11)
     erubis (2.7.0)
     execjs (2.7.0)
+    factory_girl (4.8.0)
+      activesupport (>= 3.0.0)
+    faker (1.7.3)
+      i18n (~> 0.5)
+    ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
     globalid (0.4.0)
@@ -122,6 +148,8 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kramdown (1.13.2)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.5)
@@ -136,16 +164,27 @@ GEM
     multi_xml (0.6.0)
     mysql2 (0.3.21)
     nested_form (0.3.2)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (4.1.0)
+    net-telnet (0.1.1)
+    nodespec (1.0.2)
+      net-ssh
+      os
+      serverspec (~> 2.3)
+      specinfra (~> 2.4)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     oj (3.0.10)
     orm_adapter (0.5.0)
+    os (1.0.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
     pry-rails (0.3.6)
       pry (>= 0.10.4)
+    public_suffix (2.0.5)
     rabl (0.13.1)
       activesupport (>= 2.3.14)
     rack (1.6.8)
@@ -204,6 +243,30 @@ GEM
     roo (2.7.1)
       nokogiri (~> 1)
       rubyzip (~> 1.1, < 2.0.0)
+    rspec (3.6.0)
+      rspec-core (~> 3.6.0)
+      rspec-expectations (~> 3.6.0)
+      rspec-mocks (~> 3.6.0)
+    rspec-core (3.6.0)
+      rspec-support (~> 3.6.0)
+    rspec-expectations (3.6.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.6.0)
+    rspec-its (1.2.0)
+      rspec-core (>= 3.0.0)
+      rspec-expectations (>= 3.0.0)
+    rspec-mocks (3.6.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.6.0)
+    rspec-rails (3.6.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.6.0)
+      rspec-expectations (~> 3.6.0)
+      rspec-mocks (~> 3.6.0)
+      rspec-support (~> 3.6.0)
+    rspec-support (3.6.0)
     rubyzip (1.2.1)
     sass (3.2.19)
     sass-rails (4.0.5)
@@ -214,7 +277,22 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    selenium-webdriver (3.4.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0)
+    serverspec (2.39.1)
+      multi_json
+      rspec (~> 3.0)
+      rspec-its
+      specinfra (~> 2.68)
+    sfl (2.3)
     slop (3.6.0)
+    specinfra (2.68.0)
+      net-scp
+      net-ssh (>= 2.7, < 5.0)
+      net-telnet
+      sfl
     sprockets (2.12.4)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -241,9 +319,12 @@ GEM
       equalizer (~> 0.0, >= 0.0.9)
     warden (1.2.7)
       rack (>= 1.0)
+    websocket (1.2.4)
     wine_bouncer (1.0.1)
       doorkeeper (>= 1.4, < 4.3)
       grape (~> 0.10, < 1.0)
+    xpath (2.1.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -251,8 +332,12 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
+  capybara
   coffee-rails (~> 4.0.0)
+  database_cleaner
   devise (~> 3.4.1)
+  factory_girl_rails!
+  faker
   grape
   grape-entity
   grape-swagger!
@@ -260,15 +345,19 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kramdown
+  launchy
   mysql2 (~> 0.3.18)
+  nodespec
   oj
   pry-rails
   rabl
   rails (= 4.2.0)
   rails_admin
   roo
+  rspec-rails
   sass-rails (~> 4.0.0)
   sdoc
+  selenium-webdriver
   turbolinks
   uglifier (>= 1.3.0)
   wine_bouncer (~> 1.0.1)

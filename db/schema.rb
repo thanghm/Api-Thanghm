@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529091905) do
+ActiveRecord::Schema.define(version: 20170530032715) do
 
   create_table "api_keys", force: :cascade do |t|
     t.string   "access_token", limit: 255
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20170529091905) do
     t.datetime "updated_at"
     t.integer  "season_id",      limit: 4
   end
+
+  add_index "players", ["player_name"], name: "index_players_on_player_name", using: :btree
 
   create_table "seasons", force: :cascade do |t|
     t.string   "name",       limit: 255

@@ -36,6 +36,16 @@ group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', github: 'thoughtbot/factory_girl_rails'
+end
+
+group :test do
+  gem 'faker'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
 end
 
 group :doc do
@@ -52,4 +62,4 @@ gem 'kramdown'
 gem 'grape-swagger-rails'
 gem 'roo'
 gem 'wine_bouncer', '~> 1.0.1'
-gem "devise", "~> 3.4.1"
+gem 'devise', '~> 3.4.1'

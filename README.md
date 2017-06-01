@@ -48,6 +48,19 @@ Match
 * Can search matches by player name or season name # GET http:/localhost:3000/api/v1/matches/search_matches
 * Parameter: search_text
 
+RSpec
+* Test Player Model
+* Test User Model
+* Test Season Model
+* Test Group Model
+* Test Match Model
+* Test ApiKey Model
+
+* Test User Api Request
+* Test Player Api Request
+* Test Season Api Request
+* Test Match Api Request
+
 ========****=========
 
 Api refer and modify:
